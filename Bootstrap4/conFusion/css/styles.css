@@ -39,3 +39,16 @@ address{
     background-color: rgb(80, 80, 80);
 
 }
+
+body{
+    padding:50px 0px 0px 0px;
+    z-index:0;
+}
+
+.navbar-dark {
+     background-color: #373737;
+}
+
+ol{
+    margin-top: 1%;
+}
