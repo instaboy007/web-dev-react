@@ -59,3 +59,27 @@ ol{
     border-bottom: 1px solid #ddd;
     padding: 10px;
 }
+
+.carousel {
+    background:#7b7b7b;
+}
+
+.carousel-item {
+  height: 300px;
+}
+
+.carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 300px;
+}
+
+/* [class*="col-"]{
+    border:1px solid black;
+}
+
+.row{
+    margin-left:0px;
+    margin-right:0px;
+} */
