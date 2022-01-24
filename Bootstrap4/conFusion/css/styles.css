@@ -13,16 +13,15 @@
   margin: 0px auto;
   padding: 20px 0px; }
 
-.copyright{
-  margin-top:1%;
+.copyright {
+  margin-top: 1%;
   position: absolute;
-  left:0%;
-  right:0%;
-  margin-left:0px;
-  margin-right:0px;
-  color:grey;
-  background-color: rgb(80, 80, 80);
-}
+  left: 0%;
+  right: 0%;
+  margin-left: 0px;
+  margin-right: 0px;
+  color: grey;
+  background-color: #505050; }
 
 .jumbotron {
   margin: 0px auto;
@@ -66,3 +65,12 @@ body {
   position: absolute;
   bottom: 0px;
   z-index: 1; }
+
+.modal-header {
+  background-color: #2b2b2b;
+  color: floralwhite; }
+  .modal-header .close {
+    color: floralwhite; }
+
+.modal-body {
+  background-color: #cacaca; }
