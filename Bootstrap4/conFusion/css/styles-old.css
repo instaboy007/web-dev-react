@@ -1,0 +1,92 @@
+.row-header{
+    margin:0px auto;
+    padding:0px;
+}
+
+.row-content {
+    margin:0px auto;
+    padding: 50px 0px 50px 0px;
+    border-bottom: 1px ridge;
+    min-height:300px;
+}
+
+.footer{
+    position:relative;
+    background-color: #9a9a9a;
+    margin:0px auto;
+    padding: 20px 0px 20px 0px;
+}
+
+.jumbotron {
+    padding:70px 30px 70px 30px;
+    margin:0px auto;
+}
+
+address{
+    font-size:80%;
+    margin:0px;
+    color:#0f0f0f;
+}
+
+.copyright{
+    margin-top:1%;
+    position: absolute;
+    left:0%;
+    right:0%;
+    margin-left:0px;
+    margin-right:0px;
+    color:grey;
+    background-color: rgb(80, 80, 80);
+
+}
+
+body{
+    padding:50px 0px 0px 0px;
+    z-index:0;
+}
+
+.navbar-dark {
+     background-color: #373737;
+}
+
+ol{
+    margin-top: 1%;
+}
+
+.tab-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+.carousel {
+    background:#7b7b7b;
+}
+
+.carousel-item {
+  height: 300px;
+}
+
+.carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 300px;
+}
+
+/* [class*="col-"]{
+    border:1px solid black;
+}
+
+.row{
+    margin-left:0px;
+    margin-right:0px;
+} */
+
+#carouselButton {
+    right:0px;
+    position: absolute;
+    bottom: 0px;
+    z-index: 1;
+}
