@@ -16,15 +16,15 @@ class Header extends Component {
     }
 
     toggleNav() {
-    this.setState({
-        isNavOpen: !this.state.isNavOpen
-    });
+        this.setState({
+            isNavOpen: !this.state.isNavOpen
+        });
     }
 
     toggleModal() {
-    this.setState({
-        isModalOpen: !this.state.isModalOpen
-    });
+        this.setState({
+            isModalOpen: !this.state.isModalOpen
+        });
     }
 
     handleLogin(event) {
