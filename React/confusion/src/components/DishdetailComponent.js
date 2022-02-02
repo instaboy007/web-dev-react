@@ -4,19 +4,27 @@ import { Card, CardImg, CardText, CardBody,CardTitle, Breadcrumb, BreadcrumbItem
 import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import { Loading } from './LoadingComponent';
-import {baseUrl} from '../shared/baseUrl'
+import {baseUrl} from '../shared/baseUrl';
+import { FadeTransform, Fade, Stagger } from 'react-animation-components';
+
 
 function RenderDish({dish }){
-    
     if (dish != null){
         return(
-            <Card key={dish.id}>
-                <CardImg top src={baseUrl+dish.image} alt={dish.name} />
-                <CardBody>
-                    <CardTitle>{dish.name}</CardTitle>
-                    <CardText>{dish.description}</CardText>
-                </CardBody>
-            </Card>
+            <FadeTransform
+                in
+                transformProps={{
+                    exitTransform: 'scale(0.5) translateY(-50%)'
+                }}>
+                    <Card key={dish.id}>
+                        <CardImg top src={baseUrl+dish.image} alt={dish.name} />
+                        <CardBody>
+                            <CardTitle>{dish.name}</CardTitle>
+                            <CardText>{dish.description}</CardText>
+                        </CardBody>
+                    </Card>
+            </FadeTransform>
+            
         );
     }
     else{
@@ -110,37 +118,35 @@ class CommentForm extends Component{
     }
 }
 
-function RenderComments({dish, postComment,dishId}){
-    console.log("Rendering Comments")
+function RenderComments({comments, postComment,dishId}){
 
-    if(dish==null){
+    if(comments==null){
         return(
             <div></div>
         )
     }
     else{
-        const dishComments=dish.map((comment)=>{
-            var date = new Date(comment.date);
-            var day = date.getDate();
-            const monthNames = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"];
-            var month = date.getMonth();
-            var year = date.getFullYear();
-            return(
-                <li key={comment.id}>
-                    <p>{comment.comment}</p>
-                    <p>-- {comment.author}, {monthNames[month].slice(0,3)} {day}, {year}</p>
-                </li>
-            )     
-        });
         return(
-            <div key={dish.id}>
+            <div key={dishId}>
                 <header>
                     <strong><h4>Comments</h4></strong>
                 </header>
-                <ul className="list-unstyled">{dishComments}</ul>
+                <ul className="list-unstyled">
+                    <Stagger in>
+                        {comments.map((comment) => {
+                            return (
+                                <Fade in>
+                                    <li key={comment.id}>
+                                        <p>{comment.comment}</p>
+                                        <p>-- {comment.author} , {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}</p>
+                                    </li>
+                                </Fade>
+                            );
+                        })}
+                    </Stagger>
+                </ul>
                 <CommentForm dishId={dishId} postComment={postComment} />
             </div>
-            
         )
     }
 }
@@ -182,7 +188,7 @@ const DishDetail=(props)=>{
                         <RenderDish dish={props.dish} />
                     </div>
                     <div className='col-12 col-md-5 m-1'>
-                        <RenderComments dish={props.comments} postComment={props.postComment} dishId={props.dish.id} />
+                        <RenderComments comments={props.comments} postComment={props.postComment} dishId={props.dish.id} />
                     </div>
                 </div>
             </div>
