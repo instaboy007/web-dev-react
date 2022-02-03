@@ -83,38 +83,6 @@ export const postFeedback = (firstname,lastname,telnum,email,agree,contactType,m
     .catch(error =>  { console.log('Post Feedback', error.message); alert('Your Feedback could not be posted\nError: '+error.message); });
 };
 
-export const fetchFeedbacks = () => (dispatch) => {
-
-    dispatch(feedbacksLoading(true));
-
-    return fetch(baseUrl + 'feedback')
-        .then(response =>{
-            if(response.ok){
-                return response;
-            }
-            else{
-                var error=new Error('Error '+ response.status + ': '+ response.statusText);
-                error.response=response;
-                throw error;
-            }
-        },
-        error=>{
-            var errMess=new Error(error.message);
-            throw errMess;
-        })
-        .then(response => response.json())
-        .then(feedbacks => dispatch(addFeedbacks(feedbacks)))
-        .catch(error=> dispatch(feedbacksFailed(error.message)))
-}
-
-export const addFeedbacks = (feedbacks) => ({
-    type: ActionTypes.ADD_FEEDBACKS,
-    payload: feedbacks
-});
-
-export const feedbacksLoading = () => ({
-    type: ActionTypes.FEEDBACKS_LOADING
-});
 
 export const feedbacksFailed = (errmess) => ({
     type: ActionTypes.FEEDBACKS_FAILED,

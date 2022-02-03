@@ -209,6 +209,21 @@
       "comment": "Delicious",
       "date": "2022-02-02T07:11:37.021Z",
       "id": 20
+    },
+    {
+      "dishId": 3,
+      "rating": "5",
+      "author": "Prashanth S",
+      "comment": "Arumai!",
+      "date": "2022-02-03T09:05:36.260Z",
+      "id": 21
+    },
+    {
+      "dishId": 2,
+      "author": "Prashanth S",
+      "comment": "NOT NICEEEE",
+      "date": "2022-02-03T09:11:09.954Z",
+      "id": 22
     }
   ],
   "promotions": [
@@ -273,15 +288,26 @@
       "id": 1
     },
     {
-      "firstname": "insta",
-      "lastname": "boy",
-      "telnum": "123456",
+      "firstname": "Prashanth",
+      "lastname": "Instaboy",
+      "telnum": "123456987",
       "email": "ssprashanth2002@gmail.com",
       "agree": true,
       "contactType": "Email",
-      "message": "hello",
-      "date": "2022-02-02T16:19:02.646Z",
+      "message": "It was Wonderful",
+      "date": "2022-02-03T08:25:16.923Z",
       "id": 2
+    },
+    {
+      "firstname": "Sanjay ",
+      "lastname": "Prasad",
+      "telnum": "987654321",
+      "email": "sanjay@gmail.com",
+      "agree": true,
+      "contactType": "Email",
+      "message": "I am very happy",
+      "date": "2022-02-03T08:53:38.853Z",
+      "id": 3
     }
   ]
 }
